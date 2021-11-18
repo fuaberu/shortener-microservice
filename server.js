@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 	res.sendFile(process.cwd() + '/views/index.html');
 });
 
-//
+//create shortUrl
 app.post('/api/shorturl', function (req, res) {
 	let original = req.body.url;
 	//check if original url is valid
@@ -69,6 +69,7 @@ app.post('/api/shorturl', function (req, res) {
 	});
 });
 
+//get redirected
 app.get('/api/shorturl/:url', async function (req, res) {
 	const short_urlParams = req.params.url;
 	console.log(short_urlParams, 'params');
