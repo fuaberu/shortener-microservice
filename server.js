@@ -87,10 +87,6 @@ app.get('/api/shorturl/:url', async function (req, res) {
 	}
 });
 
-app.get('/api', async function (req, res) {
-	res.json({ var: process.env.MONGOURL });
-});
-
 app.listen(port, function () {
 	console.log(`Listening on port ${port}`);
 });
